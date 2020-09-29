@@ -76,10 +76,35 @@ class Contact {
 	 * Send LINE Notify
 	 */
 	public function mwform_admin_mail_line_notify( $Mail, $values, $Data ) {
-		$access_token = $this->options['line_access_token'];
-		if ( ! $access_token ) {
-			return $Mail;
-		}
+//		$access_token = $this->options['line_access_token'];
+//		if ( ! $access_token ) {
+//			return $Mail;
+//		}
+//
+//		$message = sprintf( "%s\n\n%s", $Mail->subject, $Mail->body );
+//
+//		/**
+//		 * Filters send contact message.
+//		 *
+//		 * @param string $message
+//		 * @param object $Mail
+//		 * @param array $values
+//		 * @param MW_WP_Form_Data $Data
+//		 */
+//		$message = apply_filters( 'c2ln_contact_notify_message', $message, $Mail, $values, $Data );
+//
+//		$response = wp_remote_post( $this->line_endpoint, [
+//			'method'  => 'POST',
+//			'headers' => [
+//				'Authorization' => 'Bearer ' . $access_token,
+//			],
+//			'body'    => [
+//				'message' => $message,
+//			],
+//		] );
+//
+//		return $Mail;
+
 
 		$message = sprintf( "%s\n\n%s", $Mail->subject, $Mail->body );
 
@@ -93,15 +118,8 @@ class Contact {
 		 */
 		$message = apply_filters( 'c2ln_contact_notify_message', $message, $Mail, $values, $Data );
 
-		$response = wp_remote_post( $this->line_endpoint, [
-			'method'  => 'POST',
-			'headers' => [
-				'Authorization' => 'Bearer ' . $access_token,
-			],
-			'body'    => [
-				'message' => $message,
-			],
-		] );
+		$line = new Line();
+		$line->notify( $message );
 
 		return $Mail;
 	}

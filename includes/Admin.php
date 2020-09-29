@@ -79,6 +79,14 @@ class Admin {
 		);
 
 		add_settings_field(
+			'line_access_token_checker',
+			'',
+			[ $this, 'line_access_token_checker_callback' ],
+			$this->option_group,
+			'general_settings'
+		);
+
+		add_settings_field(
 			'is_order_enabled',
 			__( 'Order', 'conversion-to-line-notify' ),
 			[ $this, 'is_order_enabled_callback' ],
@@ -105,6 +113,21 @@ class Admin {
 		       value="<?php echo $line_access_token; ?>"
 		       class="regular-text">
 		<?php
+	}
+
+	/**
+	 * Render line_access_token_checker field.
+	 */
+	public function line_access_token_checker_callback() {
+		$line_access_token = isset( $this->options['line_access_token'] ) ? $this->options['line_access_token'] : '';
+		if ( $line_access_token ) :
+			$line = new Line();
+			if ( $line->status() ) {
+				echo '<p class="description">' . __( 'LINE access token is valid.', '' ) . '</p>';
+			} else {
+				echo '<p class="description"><strong>' . __( 'LINE access token is invalid! Please check again.', '' ) . '</strong></p>';
+			}
+		endif;
 	}
 
 	/**
