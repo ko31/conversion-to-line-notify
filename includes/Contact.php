@@ -9,12 +9,6 @@ namespace GS\Conversion_To_Line_Notify;
 class Contact {
 
 	/**
-	 * LINE Notify endpoint
-	 * @var string
-	 */
-	private $line_endpoint = 'https://notify-api.line.me/api/notify';
-
-	/**
 	 * Option name
 	 * @var string
 	 */
