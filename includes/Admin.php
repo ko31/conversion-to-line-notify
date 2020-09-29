@@ -8,10 +8,22 @@ namespace GS\Conversion_To_Line_Notify;
  */
 class Admin {
 
+	/**
+	 * Option values
+	 * @var
+	 */
 	private $options;
 
+	/**
+	 * Option name
+	 * @var string
+	 */
 	private $option_name = 'c2ln-setting';
 
+	/**
+	 * Option group
+	 * @var string
+	 */
 	private $option_group = 'c2ln-group';
 
 	/**

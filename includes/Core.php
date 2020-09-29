@@ -42,6 +42,6 @@ class core {
 			new Admin();
 		}
 //		new Order();
-//		new Contact();
+		new Contact();
 	}
 }

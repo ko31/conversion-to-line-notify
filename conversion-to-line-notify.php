@@ -29,13 +29,3 @@ require_once( dirname( __FILE__ ) . '/functions.php' );
 add_action( 'plugins_loaded', function () {
 	new Core();
 } );
-
-//register_activation_hook( __FILE__, function () {
-//	$core = new Core();
-//	$core->activation();
-//} );
-//
-//register_deactivation_hook( __FILE__, function () {
-//	$core = new Core();
-//	$core->deactivation();
-//} );
