@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: Conversion to LINE Nofify 1.0.0\n"
 "Report-Msgid-Bugs-To: "
 "https://wordpress.org/support/plugin/conversion-to-line-notify\n"
-"POT-Creation-Date: 2020-09-30 03:13:35+00:00\n"
+"POT-Creation-Date: 2020-09-30 05:27:39+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -47,6 +47,12 @@ msgstr ""
 
 #: includes/Admin.php:115
 msgid "The access token is invalid! Please check again."
+msgstr ""
+
+#: includes/Admin.php:119
+msgid ""
+"Get an access token on <a href=\"https://notify-bot.line.me/login\" "
+"target=\"_blank\">LINE Notify</a>."
 msgstr ""
 
 #: includes/Admin.php:138

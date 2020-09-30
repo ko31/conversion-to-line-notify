@@ -116,7 +116,7 @@ class Admin {
 			endif;
 		endif;
 		?>
-		<p>Get an access token on <a href="https://notify-bot.line.me/login" target="_blank">LINE Notify</a>.</p>
+		<p><?php _e('Get an access token on <a href="https://notify-bot.line.me/login" target="_blank">LINE Notify</a>.', 'conversion-to-line-notify');?></p>
 		<?php
 	}
 

@@ -30,7 +30,7 @@ class core {
 		load_plugin_textdomain(
 			C2LN_TEXT_DOMAIN,
 			false,
-			plugin_basename(C2LN_PATH) . '/languages/'
+			basename( dirname( __DIR__ ) ) . '/languages'
 		);
 	}
 
