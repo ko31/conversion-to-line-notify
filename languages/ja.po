@@ -1,0 +1,89 @@
+# Copyright (C) 2020 ko31
+# This file is distributed under the same license as the Conversion to LINE Nofify package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Conversion to LINE Nofify 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/conversion-to-"
+"line-notify\n"
+"POT-Creation-Date: 2020-09-30 03:13:35+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2020-09-30 12:23+0900\n"
+"Language-Team: \n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;"
+"_n_noop:1,2;_nx_noop:1,2,3c;esc_attr__;esc_html__;esc_attr_e;esc_html_e;"
+"esc_attr_x:1,2c;esc_html_x:1,2c\n"
+"X-Poedit-Basepath: ..\n"
+"X-Textdomain-Support: yes\n"
+"X-Generator: Poedit 2.4.1\n"
+"Last-Translator: \n"
+"Language: ja\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: includes/Admin.php:49 includes/Admin.php:50
+msgid "Conversion to LINE Notify"
+msgstr "Conversion to LINE Notify"
+
+#: includes/Admin.php:68
+msgid "General Settings"
+msgstr "全体設定"
+
+#: includes/Admin.php:75
+msgid "LINE access token"
+msgstr "LINE アクセストークン"
+
+#: includes/Admin.php:83
+msgid "Order"
+msgstr "注文"
+
+#: includes/Admin.php:91
+msgid "Contact"
+msgstr "問い合わせ"
+
+#: includes/Admin.php:115
+msgid "The access token is invalid! Please check again."
+msgstr "このアクセストークンは正しくありません。もう一度確認してください。"
+
+#: includes/Admin.php:138
+msgid "Check if you want to enable order notifications."
+msgstr "注文の通知を有効にする場合はチェックする。"
+
+#: includes/Admin.php:158
+msgid "Check if you want to enable contact notifications."
+msgstr "問い合わせの通知を有効にする場合はチェックする。"
+
+#: includes/Admin.php:170
+msgid "Conversion to LINE Notify Settings"
+msgstr "Conversion to LINE Notify 設定"
+
+#: includes/Order.php:59
+msgid "New order #%d"
+msgstr "新規注文 #%d"
+
+#. translators: %s: Customer billing full name
+#: templates/emails/plain/admin-new-order.php:14
+msgid "You’ve received the following order from %s:"
+msgstr "%s から次の注文を受け付けました。"
+
+#. Plugin Name of the plugin/theme
+msgid "Conversion to LINE Nofify"
+msgstr "Conversion to LINE Nofify"
+
+#. Plugin URI of the plugin/theme
+msgid "https://github.com/ko31/conversion-to-line-notify"
+msgstr "https://github.com/ko31/conversion-to-line-notify"
+
+#. Description of the plugin/theme
+msgid "The plugin send conversions to LINE Notify."
+msgstr "このプラグインは成果を LINE Notify へ送信します。"
+
+#. Author of the plugin/theme
+msgid "ko31"
+msgstr "ko31"
+
+#. Author URI of the plugin/theme
+msgid "https://go-sign.info"
+msgstr "https://go-sign.info"
