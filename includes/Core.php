@@ -41,7 +41,7 @@ class core {
 		if ( is_admin() ) {
 			new Admin();
 		}
-//		new Order();
+		new Order();
 		new Contact();
 	}
 }

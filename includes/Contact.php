@@ -67,7 +67,15 @@ class Contact {
 	}
 
 	/**
-	 * Send LINE Notify
+	 * Send LINE Notify when mwform_admin_mail_mw-wp-form-* action runs.
+	 *
+	 * @param object $Mail
+	 * @param array $values
+	 * @param MW_WP_Form_Data $Data
+	 *
+	 * @return mixed
+	 *
+	 * @link https://plugins.2inc.org/mw-wp-form/filter-hook/mwform_admin_mail/
 	 */
 	public function mwform_admin_mail_line_notify( $Mail, $values, $Data ) {
 		$message = sprintf( "%s\n\n%s", $Mail->subject, $Mail->body );
