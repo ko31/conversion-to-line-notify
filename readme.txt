@@ -1,16 +1,16 @@
-# Conversion to LINE Notify #
-**Contributors:** [ko31](https://profiles.wordpress.org/ko31)  
-**Tags:** line,woocommerce  
-**Requires at least:** 4.7  
-**Tested up to:** 5.5  
-**Requires PHP:** 5.6  
-**Stable tag:** 1.0.0  
-**License:** GPLv2 or later  
-**License URI:** https://www.gnu.org/licenses/gpl-2.0.html  
+=== Conversion to LINE Notify ===
+Contributors: ko31
+Tags: line,woocommerce
+Requires at least: 4.7
+Tested up to: 5.5
+Requires PHP: 5.6
+Stable tag: 1.0.0
+License: GPLv2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 The plugin send conversions to LINE Notify.
 
-## Description ##
+== Description ==
 
 The plugin send conversions message to LINE Notify.
 
@@ -21,11 +21,11 @@ The following conversions are supported.
 
 You will also need an [LINE Notify](https://notify-bot.line.me/) access token to send messages.
 
-## Related Links ##
+== Related Links ==
 
 * [Github](https://github.com/ko31/conversion-to-line-notify)
 
-## Installation ##
+== Installation ==
 
 1. Upload the conversion-to-line-notify directory to the plugins directory.
 1. Activate the plugin through the ‘Plugins’ menu in WordPress.

@@ -1,0 +1,91 @@
+# Copyright (C) 2020 ko31
+# This file is distributed under the same license as the Conversion to LINE Nofify package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Conversion to LINE Nofify 1.0.0\n"
+"Report-Msgid-Bugs-To: "
+"https://wordpress.org/support/plugin/conversion-to-line-notify\n"
+"POT-Creation-Date: 2020-09-30 03:12:38+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2020-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: en\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-Country: United States\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: "
+"__;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;_nx_noop:1,2,3c;esc_"
+"attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;esc_html_x:1,2c;\n"
+"X-Poedit-Basepath: ../\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-Bookmarks: \n"
+"X-Textdomain-Support: yes\n"
+"X-Generator: grunt-wp-i18n 1.0.3\n"
+
+#: includes/Admin.php:49 includes/Admin.php:50
+msgid "Conversion to LINE Notify"
+msgstr ""
+
+#: includes/Admin.php:68
+msgid "General Settings"
+msgstr ""
+
+#: includes/Admin.php:75
+msgid "LINE access token"
+msgstr ""
+
+#: includes/Admin.php:83
+msgid "Order"
+msgstr ""
+
+#: includes/Admin.php:91
+msgid "Contact"
+msgstr ""
+
+#: includes/Admin.php:115
+msgid "The access token is invalid! Please check again."
+msgstr ""
+
+#: includes/Admin.php:138
+msgid "Check if you want to enable order notifications."
+msgstr ""
+
+#: includes/Admin.php:158
+msgid "Check if you want to enable contact notifications."
+msgstr ""
+
+#: includes/Admin.php:170
+msgid "Conversion to LINE Notify Settings"
+msgstr ""
+
+#: includes/Order.php:59
+msgid "New order #%d"
+msgstr ""
+
+#: templates/emails/plain/admin-new-order.php:14
+#. translators: %s: Customer billing full name
+msgid "You’ve received the following order from %s:"
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "Conversion to LINE Nofify"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "https://github.com/ko31/conversion-to-line-notify"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "The plugin send conversions to LINE Notify."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "ko31"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://go-sign.info"
+msgstr ""
