@@ -42,50 +42,57 @@ class Order {
 	 * Add filter hook for contact form.
 	 */
 	public function add_filters() {
-		add_action( 'woocommerce_new_order', [ $this, 'woocommerce_new_order_line_notify' ], 10, 2 );
+		add_action( 'woocommerce_checkout_order_processed', [
+			$this,
+			'woocommerce_checkout_order_processed_line_notify'
+		], 10, 3 );
 	}
 
 	/**
-	 * Send LINE Notify when when woocommerce_new_order action runs.
+	 * Send LINE Notify when when woocommerce_checkout_order_processed action runs.
 	 *
 	 * @param int $order_id
+	 * @param mixed $posted_data
 	 * @param WC_Order $order Order object.
 	 */
-	public function woocommerce_new_order_line_notify( $order_id, $order ) {
-		$mailer             = WC()->mailer();
-		$template           = 'emails/plain/admin-new-order.php';
-		$template_path      = '';
-		$default_path       = untrailingslashit( C2LN_PATH ) . '/templates/';
-		$heading            = sprintf( __( 'New order #%d', 'conversion-to-line-notify' ), $order_id );
-		$additional_content = '';
-		$message            = wc_get_template_html(
-			$template,
-			[
-				'order'              => $order,
-				'email_heading'      => $heading,
-				'sent_to_admin'      => false,
-				'plain_text'         => true,
-				'email'              => $mailer,
-				'additional_content' => $additional_content,
-			],
-			$template_path,
-			$default_path
-		);
+	public function woocommerce_checkout_order_processed_line_notify( $order_id, $posted_data, $order ) {
+		$wc_emails = WC()->mailer()->get_emails();
 
-		// Strip HTML tags
-		$message = strip_tags( $message );
+		// Adjust properties to avoid sending email.
+		$wc_emails['WC_Email_New_Order']->enabled = 'no';
+		$wc_emails['WC_Email_New_Order']->recipient = '';
 
-		// Decode entity tags
-		$message = html_entity_decode( $message );
+		array_unshift( $wc_emails['WC_Email_New_Order']->plain_search, '/&yen;/i' );
+		array_unshift( $wc_emails['WC_Email_New_Order']->plain_replace, '¥' );
+
+		/**
+		 * Filters plain search strings.
+		 *
+		 * @param array $plain_search
+		 */
+		$wc_emails['WC_Email_New_Order']->plain_search = apply_filters( 'c2ln_plain_search_strings', $wc_emails['WC_Email_New_Order']->plain_search );
+
+		/**
+		 * Filters plain replace strings.
+		 *
+		 * @param array $plain_replace
+		 */
+		$wc_emails['WC_Email_New_Order']->plain_replace = apply_filters( 'c2ln_plain_replace_strings', $wc_emails['WC_Email_New_Order']->plain_replace );
+
+		$wc_emails['WC_Email_New_Order']->email_type = 'plain';
+		$wc_emails['WC_Email_New_Order']->object     = $order;
+		$wc_emails['WC_Email_New_Order']->trigger( $order_id );
+		$message = $wc_emails['WC_Email_New_Order']->get_content();
 
 		/**
 		 * Filters send order message.
 		 *
 		 * @param string $message
 		 * @param int $order_id
+		 * @param mixed $posted_data
 		 * @param WC_Order $order Order object.
 		 */
-		$message = apply_filters( 'c2ln_order_notify_message', $message, $order_id, $order );
+		$message = apply_filters( 'c2ln_order_notify_message', $message, $order_id, $posted_data, $order );
 
 		$line = new Line();
 		$line->notify( $message );
