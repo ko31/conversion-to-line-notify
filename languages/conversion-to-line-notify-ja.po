@@ -5,8 +5,8 @@ msgstr ""
 "Project-Id-Version: Conversion to LINE Nofify 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/conversion-to-"
 "line-notify\n"
-"POT-Creation-Date: 2020-09-30 05:27:39+00:00\n"
-"PO-Revision-Date: 2020-09-30 14:29+0900\n"
+"POT-Creation-Date: 2020-10-07 14:43:24+00:00\n"
+"PO-Revision-Date: 2020-10-07 23:47+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -67,14 +67,10 @@ msgstr "問い合わせの通知を有効にする場合はチェックする。
 msgid "Conversion to LINE Notify Settings"
 msgstr "Conversion to LINE Notify 設定"
 
-#: includes/Order.php:59
-msgid "New order #%d"
-msgstr "新規注文 #%d"
-
 #. translators: %s: Customer billing full name
 #: templates/emails/plain/admin-new-order.php:14
 msgid "You’ve received the following order from %s:"
-msgstr "%s から次の注文を受け付けました。"
+msgstr "%s から次の注文を受け付けました:"
 
 #. Plugin Name of the plugin/theme
 msgid "Conversion to LINE Nofify"
@@ -95,3 +91,6 @@ msgstr "ko31"
 #. Author URI of the plugin/theme
 msgid "https://go-sign.info"
 msgstr "https://go-sign.info"
+
+#~ msgid "New order #%d"
+#~ msgstr "新規注文 #%d"
