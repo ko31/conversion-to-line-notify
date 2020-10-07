@@ -7,7 +7,7 @@
  * Author URI:      https://go-sign.info
  * Text Domain:     conversion-to-line-notify
  * Domain Path:     /languages
- * Version:         1.0.0
+ * Version:         1.1.0
  *
  * @package         Conversion_To_Line_Notify
  */
