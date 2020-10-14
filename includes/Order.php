@@ -42,24 +42,19 @@ class Order {
 	 * Add filter hook for contact form.
 	 */
 	public function add_filters() {
-		add_action( 'woocommerce_checkout_order_processed', [
-			$this,
-			'woocommerce_checkout_order_processed_line_notify'
-		], 10, 3 );
+		add_action( 'woocommerce_thankyou', [ $this, 'woocommerce_thankyou_line_notify' ], 10, 1 );
 	}
 
 	/**
-	 * Send LINE Notify when when woocommerce_checkout_order_processed action runs.
+	 * Send LINE Notify when when woocommerce_thankyou action runs.
 	 *
 	 * @param int $order_id
-	 * @param mixed $posted_data
-	 * @param WC_Order $order Order object.
 	 */
-	public function woocommerce_checkout_order_processed_line_notify( $order_id, $posted_data, $order ) {
+	public function woocommerce_thankyou_line_notify( $order_id ) {
 		$wc_emails = WC()->mailer()->get_emails();
 
 		// Adjust properties to avoid sending email.
-		$wc_emails['WC_Email_New_Order']->enabled = 'no';
+		$wc_emails['WC_Email_New_Order']->enabled   = 'no';
 		$wc_emails['WC_Email_New_Order']->recipient = '';
 
 		array_unshift( $wc_emails['WC_Email_New_Order']->plain_search, '/&yen;/i' );
@@ -80,7 +75,7 @@ class Order {
 		$wc_emails['WC_Email_New_Order']->plain_replace = apply_filters( 'c2ln_plain_replace_strings', $wc_emails['WC_Email_New_Order']->plain_replace );
 
 		$wc_emails['WC_Email_New_Order']->email_type = 'plain';
-		$wc_emails['WC_Email_New_Order']->object     = $order;
+		$wc_emails['WC_Email_New_Order']->object     = wc_get_order( $order_id );
 		$wc_emails['WC_Email_New_Order']->trigger( $order_id );
 		$message = $wc_emails['WC_Email_New_Order']->get_content();
 
@@ -89,10 +84,8 @@ class Order {
 		 *
 		 * @param string $message
 		 * @param int $order_id
-		 * @param mixed $posted_data
-		 * @param WC_Order $order Order object.
 		 */
-		$message = apply_filters( 'c2ln_order_notify_message', $message, $order_id, $posted_data, $order );
+		$message = apply_filters( 'c2ln_order_notify_message', $message, $order_id );
 
 		$line = new Line();
 		$line->notify( $message );

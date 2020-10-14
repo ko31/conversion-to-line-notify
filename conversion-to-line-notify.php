@@ -7,7 +7,7 @@
  * Author URI:      https://go-sign.info
  * Text Domain:     conversion-to-line-notify
  * Domain Path:     /languages
- * Version:         1.1.0
+ * Version:         1.2.0
  *
  * @package         Conversion_To_Line_Notify
  */
@@ -18,7 +18,6 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
-define( 'C2LN_VERSION', '1.0.0' );
 define( 'C2LN_TEXT_DOMAIN', 'conversion-to-line-notify' );
 define( 'C2LN_PATH', plugin_dir_path( __FILE__ ) );
 
